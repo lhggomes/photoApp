@@ -1,20 +1,16 @@
-import { HttpClientModule } from '@angular/common/http';
-import { PhotosModule } from './photos/photos.module';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+
+import { PhotosModule } from './photos/photos.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    PhotosModule,
-    AppRoutingModule,
-    HttpClientModule
+    PhotosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

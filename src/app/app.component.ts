@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
-import { PhotoService } from './photos/photo/photo.service';
+import { Component, OnInit } from '@angular/core';
 
+import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'PhotoApp';
-  photos: Object [] = [];
+export class AppComponent implements OnInit{
 
-  constructor(photoService: PhotoService){
-    photoService
-    .listFromUser('flavio')
-    .subscribe(photos => this.photos = photos);
+  
+  photos: any[] = []; 
+  
+  constructor(private photoService: PhotoService) { }
+
+  ngOnInit(): void {
+    
+      this.photoService
+        .listFromUser('flavio')
+        .subscribe(photos => this.photos = photos);
   }
-
 }
