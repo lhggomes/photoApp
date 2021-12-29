@@ -1,3 +1,10 @@
-<p>
-  photos works!
-</p>
+<ol class="list-unstyled row">
+  <li *ngFor="let photo of photos" class="col-lg-4">
+    <ap-photo
+      [url]="photo.url"
+      [description]="photo.description">
+    </ap-photo>
+
+  </li>
+</ol>
+

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Photo} from '../../photo/photo';
 
 @Component({
   selector: 'app-photos',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
+  @Input() photos: Photo[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
